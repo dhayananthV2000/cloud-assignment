@@ -1,8 +1,18 @@
-# Use the slim Debian image as a base
-FROM debian:bullseye-slim
 
-# Install echo (usually included, but in case it's not)
-RUN apt-get update && apt-get install -y coreutils bash
+FROM ubuntu:latest
 
-# Run echo every minute using a while loop
-CMD while true; do echo "Namaste from Docker"; sleep 60; done
+
+RUN apt-get update && apt-get install -y \
+    netcat-openbsd
+
+
+WORKDIR /app
+
+
+RUN echo '#!/bin/bash\nwhile true; do echo -e "HTTP/1.1 200 OK\n\nNamaste from Docker" | nc -l -p 8080 -q 1; done' > /app/hello.sh && chmod +x /app/hello.sh
+
+
+EXPOSE 8080
+
+
+CMD ["/app/hello.sh"]
