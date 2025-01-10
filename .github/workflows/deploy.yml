@@ -27,10 +27,7 @@ jobs:
         cd ecs
         docker build -t dhayaanand71/microservice:custommicroservice -f Dockerfile .
 
-    # - name: Push Docker image to Docker Hub
-    #   run: |
-    #     docker push dhayaanand71/microservice:custommicroservice
-
+   
     - name: Set up AWS CLI
       uses: aws-actions/configure-aws-credentials@v1
       with:
