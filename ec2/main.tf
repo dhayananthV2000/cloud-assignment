@@ -1,5 +1,5 @@
 provider "aws" {
-  region = "us-east-1"  # Adjust the region as needed
+  region = "us-east-1" 
 }
 
 data "aws_vpc" "main_vpc" {
