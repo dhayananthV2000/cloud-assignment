@@ -45,8 +45,7 @@ jobs:
           --network-mode awsvpc \
           --cpu 256 \
           --memory 512 \
-          --execution-role-arn arn:aws:iam::123456789012:role/ecsTaskExecutionRole \
-          --task-role-arn arn:aws:iam::123456789012:role/ecsTaskExecutionRole \
+          
           --container-definitions "[{\"name\":\"microservice\",\"image\":\"dhayaanand71/microservice:custommicroservice\",\"essential\":true,\"portMappings\":[{\"containerPort\":3000,\"hostPort\":3000}]}]" \
           --query 'taskDefinition.taskDefinitionArn' --output text)
         
