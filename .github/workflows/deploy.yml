@@ -25,7 +25,7 @@ jobs:
         
         ls
         cd ecs
-        docker build -t dhayaanand71/microservice:custommicroservice -f ecs/Dockerfile .
+        docker build -t dhayaanand71/microservice:custommicroservice -f Dockerfile .
 
     # - name: Push Docker image to Docker Hub
     #   run: |
