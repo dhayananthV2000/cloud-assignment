@@ -22,7 +22,7 @@ jobs:
 
     - name: Build Docker image
       run: |
-        pwd
+        
         ls
         cd ecs
         docker build -t dhayaanand71/microservice:custommicroservice -f ecs/Dockerfile .
